@@ -1,0 +1,15 @@
+%h1 HI HACKERS
+
+%h2 Who's Here?
+= link_to 'FACETIMEYO', '/auth/facebook'
+
+%ul
+  - @hackers.each do |hacker|
+    %li= hacker.name
+%hr
+
+%p Want to hear more about being a hacker? Give us your email below!
+= form_for Hacker.new do |f|
+  = f.label :email
+  = f.text_field :email
+  = f.submit 'Get in Touch!'
